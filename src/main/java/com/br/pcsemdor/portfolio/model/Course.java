@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 
@@ -16,4 +18,16 @@ public class Course {
 	private int idCourse;
 
 	private String courseName;
+
+	private String description;
+
+	@ManyToOne()
+	@JoinColumn(name = "codLanguage")
+	private CourseLanguage courseLanguage;
+
+	@ManyToOne()
+	@JoinColumn(name = "codSource")
+	private CoursesSource courseSource;
+
+	private String urlCertificate;
 }
