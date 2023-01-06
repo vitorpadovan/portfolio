@@ -12,7 +12,7 @@ import com.br.pcsemdor.portfolio.model.Course;
 import com.br.pcsemdor.portfolio.repo.RepoCourses;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "https://vitorpadovan-portfolio.vercel.app")
 @RequestMapping("/api/curso")
 public class CoursesController {
 
