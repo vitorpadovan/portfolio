@@ -24,4 +24,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
 		return source;
 	}
+	//
+	// @Bean
+	// SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	// return http.requiresChannel(channel -> channel.anyRequest().requiresSecure())
+	// .authorizeRequests(authorize -> authorize.anyRequest().permitAll()).build();
+	// }
 }
