@@ -5,8 +5,7 @@ services:
     depends_on:
       - postgressrv
     ports:
-      - '80:8080'
-      - '443:8443'
+      - '8080:8080'
     environment:
       - fa_db_serv=postgressrv
       - 'fa_db_user=${USUARIO}'
