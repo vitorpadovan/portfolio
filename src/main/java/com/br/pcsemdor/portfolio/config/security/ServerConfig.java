@@ -1,7 +1,6 @@
 package com.br.pcsemdor.portfolio.config.security;
 
 import org.apache.catalina.Context;
-import org.apache.catalina.connector.Connector;
 import org.apache.tomcat.util.descriptor.web.SecurityCollection;
 import org.apache.tomcat.util.descriptor.web.SecurityConstraint;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
@@ -26,16 +25,16 @@ public class ServerConfig {
 				context.addConstraint(securityConstraint);
 			}
 		};
-		tomcat.addAdditionalTomcatConnectors(getHttpConnector());
+		// tomcat.addAdditionalTomcatConnectors(getHttpConnector());
 		return tomcat;
 	}
-
-	private Connector getHttpConnector() {
-		var connector = new Connector(TomcatServletWebServerFactory.DEFAULT_PROTOCOL);
-		connector.setScheme("http");
-		connector.setPort(8080);
-		connector.setSecure(false);
-		connector.setRedirectPort(8443);
-		return connector;
-	}
+	// private Connector getHttpConnector() {
+	// var connector = new
+	// Connector(TomcatServletWebServerFactory.DEFAULT_PROTOCOL);
+	// connector.setScheme("http");
+	// connector.setPort(8080);
+	// connector.setSecure(false);
+	// connector.setRedirectPort(8443);
+	// return connector;
+	// }
 }
