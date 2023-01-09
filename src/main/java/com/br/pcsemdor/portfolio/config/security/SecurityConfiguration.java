@@ -9,13 +9,18 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import lombok.extern.log4j.Log4j2;
+
 @Configuration
 @EnableWebSecurity
+@Log4j2
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		log.info("Desabilitando CORS");
 		http.cors().and().csrf().disable();
+		log.info("CORS desabilitado");
 	}
 
 	@Bean
