@@ -1,5 +1,6 @@
 package com.br.pcsemdor.portfolio.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +24,8 @@ public class Course {
 
 	private String urlCurso;
 
-	private double porcentagemConcluida;
+	@Column(nullable = true)
+	private Double porcentagemConcluida;
 
 	@ManyToOne()
 	@JoinColumn(name = "codLanguage")
