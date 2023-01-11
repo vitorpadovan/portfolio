@@ -3,6 +3,7 @@ package com.br.pcsemdor.portfolio.controller;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import com.br.pcsemdor.portfolio.model.Course;
 import com.br.pcsemdor.portfolio.repo.RepoCourses;
 
 @RestController
+@CrossOrigin(origins = "https://vitorpadovan-portfolio.vercel.app")
 @RequestMapping("/api/curso")
 public class CoursesController {
 
