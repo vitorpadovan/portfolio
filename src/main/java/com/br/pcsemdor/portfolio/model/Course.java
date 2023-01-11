@@ -21,6 +21,10 @@ public class Course {
 
 	private String description;
 
+	private String urlCurso;
+
+	private double porcentagemConcluida;
+
 	@ManyToOne()
 	@JoinColumn(name = "codLanguage")
 	private CourseLanguage courseLanguage;
