@@ -1,5 +1,6 @@
 package com.br.pcsemdor.portfolio.model;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -13,43 +14,48 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
-import lombok.AccessLevel;
 import lombok.Data;
-import lombok.Getter;
 
 @Entity
 @Data
-public class Project {
+public class Job {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idProject;
+	private int idJob;
 
-	@Column(length = 150)
-	private String title;
+	private Date startDate;
 
-	@Column(columnDefinition = "TEXT")
+	private Date endDate;
+
+	@Column(nullable = false, columnDefinition = "TEXT")
 	private String description;
 
-	@OneToMany(mappedBy = "project", fetch = FetchType.LAZY)
-	private List<ProjectLink> links;
+	@Column(nullable = false, length = 100)
+	private String companyName;
+
+	@Column(nullable = true, length = 300)
+	private String urlCompanyName;
+
+	@Column(nullable = false, length = 100)
+	private String mainPosition;
+
+	private String note;
+
+	@OneToMany(mappedBy = "job", fetch = FetchType.LAZY)
+	private List<EmploymentActivity> activityList;
 
 	@ManyToMany
 	@JoinTable(
-			name = "ProjectTags", joinColumns = @JoinColumn(
-					name = "idProject", referencedColumnName = "idProject"
+			name = "JobTags", joinColumns = @JoinColumn(
+					name = "idJob", referencedColumnName = "idJob"
 			), inverseJoinColumns = @JoinColumn(name = "idSmartTag", referencedColumnName = "idSmartTag")
 	)
 	private List<SmartTags> tags;
 
-	private ProjectStatus status = ProjectStatus.NaoIniciado;
+	private String urlLogo;
 
-	@Getter(AccessLevel.NONE)
-	@javax.persistence.Transient
-	private int codStatus;
+	private boolean temp = false;
 
-
-	public int getCodStatus() {
-		return status.getValue();
-	}
+	private boolean outsourced = false;
 }
