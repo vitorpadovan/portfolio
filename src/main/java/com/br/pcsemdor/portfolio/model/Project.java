@@ -13,7 +13,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
 
 @Entity
 @Data
@@ -39,4 +41,15 @@ public class Project {
 			), inverseJoinColumns = @JoinColumn(name = "idSmartTag", referencedColumnName = "idSmartTag")
 	)
 	private List<SmartTags> tags;
+
+	private ProjectStatus status = ProjectStatus.NaoIniciado;
+
+	@Getter(AccessLevel.NONE)
+	@javax.persistence.Transient
+	private int codStatus;
+
+
+	public int getCodStatus() {
+		return status.getValue();
+	}
 }
