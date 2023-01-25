@@ -32,4 +32,4 @@ Arquivos serão salvos em `/etc/letsencrypt/live/`
 
 ### Localização final do certificado
 
-O Certificado deve ficar em: `src/main/resources/keystore`
+O Certificado deve ficar em: `src/main/resources/keystore` e deve ter o nome de Cert.p12 para funcionar com esta aplicação
