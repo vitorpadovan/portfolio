@@ -28,7 +28,7 @@ Arquivos serão salvos em `/etc/letsencrypt/live/`
 
 ### 2.3. Converter para p12 os certificados
 
-- ` `
+- `openssl pkcs12 -export -out Cert.p12 -in cert.pem -inkey key.pem -passin pass:root -passout pass:root -password pass:YourPassword`
 
 ### 2.4. Localização final do certificado
 
