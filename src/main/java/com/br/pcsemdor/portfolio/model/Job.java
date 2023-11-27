@@ -26,6 +26,7 @@ public class Job {
 
 	private Date startDate;
 
+	@Column(nullable = true)
 	private Date endDate;
 
 	@Column(nullable = false, columnDefinition = "TEXT")
