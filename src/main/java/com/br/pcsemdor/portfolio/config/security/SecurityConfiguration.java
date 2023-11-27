@@ -19,9 +19,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		log.info("Desabilitando CORS");
 		http.cors().and().csrf().disable();
-		log.info("CORS desabilitado");
 	}
 
 	@Bean

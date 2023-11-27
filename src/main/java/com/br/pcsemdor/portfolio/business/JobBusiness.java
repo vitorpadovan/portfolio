@@ -1,6 +1,7 @@
 package com.br.pcsemdor.portfolio.business;
 
 import java.util.List;
+import org.springframework.data.domain.Sort;
 
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,7 @@ public class JobBusiness {
 	}
 
 	public List<Job> getJobs() {
-		return _repo.findAll();
+		;
+		return _repo.findAll(Sort.by("startDate").descending());
 	}
 }
