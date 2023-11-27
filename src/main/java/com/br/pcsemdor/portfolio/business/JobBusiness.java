@@ -21,7 +21,6 @@ public class JobBusiness {
 	}
 
 	public List<Job> getJobs() {
-		;
 		return _repo.findAll(Sort.by("startDate").descending());
 	}
 }
