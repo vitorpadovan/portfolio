@@ -18,12 +18,12 @@ public class ServerConfig {
 
 			@Override
 			protected void postProcessContext(Context context) {
-				var securityConstraint = new SecurityConstraint();
-				securityConstraint.setUserConstraint("CONFIDENTIAL");
-				var collection = new SecurityCollection();
-				collection.addPattern("/*");
-				securityConstraint.addCollection(collection);
-				context.addConstraint(securityConstraint);
+//				var securityConstraint = new SecurityConstraint();
+//				securityConstraint.setUserConstraint("CONFIDENTIAL");
+//				var collection = new SecurityCollection();
+//				collection.addPattern("/*");
+//				securityConstraint.addCollection(collection);
+//				context.addConstraint(securityConstraint);
 			}
 		};
 		tomcat.addAdditionalTomcatConnectors(getHttpConnector());
@@ -35,7 +35,7 @@ public class ServerConfig {
 		connector.setScheme("http");
 		connector.setPort(80);
 		connector.setSecure(false);
-		connector.setRedirectPort(443);
+//		connector.setRedirectPort(443);
 		return connector;
 	}
 }
