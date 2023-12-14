@@ -33,3 +33,7 @@ Arquivos serão salvos em `/etc/letsencrypt/live/`
 ### 2.4. Localização final do certificado
 
 O Certificado deve ficar em: `src/main/resources/keystore` e deve ter o nome de Cert.p12 para funcionar com esta aplicação
+
+## 3. Referências
+
+- [Hibernate – Many-to-Many example – join table + extra column (Annotation)](https://mkyong.com/hibernate/hibernate-many-to-many-example-join-table-extra-column-annotation/)
