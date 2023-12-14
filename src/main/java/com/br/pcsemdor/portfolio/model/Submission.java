@@ -18,26 +18,32 @@ import java.util.UUID;
 
 @Entity
 @Data
-public class Candidatura {
+public class Submission {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idCandidatura;
+	private int idSubmission;
 	
 	@Column(nullable =  false)
-	private String nomeDaEmpresa;
+	private String companyName;
 	
 	@Column(nullable =  false, unique = true)
-	private String linkVaga;
+	private String submissionLink;
 	
 	private UUID uuid;
 	
-	private Date dataCandidatura;
+	private Date submissionDate;
+	
+	@Column(columnDefinition = "boolean default false")
+	private boolean needRegistration = false;
+	
+	@Column(columnDefinition = "boolean default false")
+	private boolean registrationComplete = false;
 	
 	@ManyToMany
 	@JoinTable(
-			name = "JobSubmission", joinColumns = @JoinColumn(
-					name = "idCandidatura", referencedColumnName = "idCandidatura"
+			name = "SubmissionTags", joinColumns = @JoinColumn(
+					name = "idSubmission", referencedColumnName = "idSubmission"
 			), inverseJoinColumns = @JoinColumn(name = "idSmartTag", referencedColumnName = "idSmartTag")
 	)
 	private List<SmartTags> tags;
