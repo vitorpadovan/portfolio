@@ -37,3 +37,4 @@ O Certificado deve ficar em: `src/main/resources/keystore` e deve ter o nome de 
 ## 3. Referências
 
 - [Hibernate – Many-to-Many example – join table + extra column (Annotation)](https://mkyong.com/hibernate/hibernate-many-to-many-example-join-table-extra-column-annotation/)
+- [hibernate, join table with additional column](https://stackoverflow.com/questions/36129040/hibernate-join-table-with-additional-column)
